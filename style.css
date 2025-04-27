@@ -1,0 +1,1349 @@
+/* General */
+:root {
+    box-sizing: border-box;
+
+    --gray-main: #333;
+    --gray-10: #F5F5F5;
+    --gray-20: #EEE;
+    --gray-30: #8F95A5;
+    --black-10: #2A3246;
+    --black-20: #263238;
+    }
+       
+    *, *::before, *::after {
+      box-sizing: inherit;
+    }
+    
+  body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 400;
+      color: var(--gray-main);
+    }
+  
+  /* CONTAINER */
+  .container {
+    max-width: 1400px;
+    width: 100%;
+    background: #fff;
+    margin-inline: auto;
+  }
+
+  /* TEXT */
+  h1, h2, h3, p {
+    margin: 0;
+    padding: 0;
+  }
+
+  a {
+    text-decoration: none;
+    color: #fff;
+    display: block;
+  }
+
+  .screen__title,
+  .screen__text,
+  .about__title,
+  .about__text,
+  .skills__head,
+  .skills__text,
+  .contacts__title,
+  .contacts__text,
+  .footer__menu {
+    text-align: left;
+  }
+
+  .screen__title,
+  .skills__title,
+  .about__title,
+  .pricing__title,
+  .contacts__title,
+  .about__statistic-numbers {
+    font-weight: 600;
+    line-height: 80px;
+  }
+
+  .skills__title,
+  .about__title,
+  .pricing__title,
+  .contacts__title,
+  .about__statistic-numbers {
+    font-size: 48px;
+  }
+
+  .skills__title,
+  .pricing__title {
+    text-align: center;
+    padding-top: 60px;
+    margin-bottom: 60px;
+  }
+
+  .screen__text,
+  .skills__text,
+  .about__text,
+  .contacts__text,
+  .pricing__item__paragraph {
+    line-height: normal; 
+  }
+
+  .skills__text,
+  .about__text,
+  .contacts__text,
+  .pricing__item__paragraph,
+  .about__statistic-words {
+    color: var(--gray-30);
+    font-size: 20px;
+  }
+
+  .skills__head,
+  .pricing__item__head {
+    color: var(--black-20);
+    font-size: 30px;
+    font-weight: 600;
+  }
+
+  /* превращаем span в блочный элемент, для переноса заключенного в него текста или последующего за ним текста, на новую строку */
+  .break__text {
+    display: block;
+  }
+
+  /* серый цвет для части текстового лого, обернутой в span */
+  .gray__logo {
+    color: #939393;
+  }
+
+  /* Margins of Sections  */
+  .header {
+    margin-top: 50px;
+   }
+
+  .footer {
+    margin-bottom: 50px;
+  }
+
+  .header, .contacts {
+    margin-bottom: 100px;
+  }
+
+  .screen,
+  .skills,
+  .about,
+  .pricing {
+    margin-bottom: 250px;
+  }
+
+  /* Paddings of Sections */
+  .screen__content,
+  .about__content,
+  .pricing__content,
+  .contacts__content {
+    padding: 48px;
+    padding-top: 0;
+  }
+
+  /* Header */
+.header__burger {
+  display: none;  /* скрываем бургер-меню на десктопе */
+}
+
+.header__content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 7vw; /* 134.4px Devtools */
+  padding: 0 48px;
+}
+
+.logo {
+  font-size: 2.57vw; /* 36px; */
+}
+
+.header__menu {
+  display: flex;
+  padding-left: 0;
+  gap: 1.2vw; /* 23.04px Devtools  */
+}
+ 
+.header__menu li {
+    display: inline-block;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .header__menu a {
+    font-weight: 500;
+    font-size: 1.42vw;    /* 20px; */
+    color: var(--black-20);
+  }
+
+  .header__button {
+    width: 11.46vw;    /* 220px; */
+    height: 3.65vw;    /* 70px;  в макете также 70px */
+    background: #fff;
+    transition: background-color 1s;
+    border: 2px solid #263238;
+    font-weight: 400;
+    font-size: 1.25vw;    /* 24px; */
+  }
+
+  .header__button a {
+    color: var(--gray-main);
+  }
+
+  /* 1st Screen */
+.screen__content {
+    display: flex;
+    gap: 9.2%; /* 130px PixelPerfect */
+  }
+
+.screen__group {
+    display: flex;
+    gap: 44px;
+  }
+
+.screen__title {
+  font-size: 64px;
+  max-width: 386px;
+  margin-bottom: 40px;
+  padding-top: 40px;
+}
+
+.screen__text {
+  font-size: 24px;
+  max-width: 632px;
+  margin-bottom: 62px;
+}
+
+.screen__button {
+  border-radius: 15px;
+  width: 438px;
+  height: 118px;
+  font-size: 36px;
+  transition: background-color 1s;
+}
+
+/* Skills */
+.skills__content {
+  display: grid;
+  grid-template-areas: 
+  "speaking writing reading"
+  "speaking listening listening";
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;  /* в макете column = 18, а row = 20 */
+}
+
+#speaking {
+  grid-area: speaking;
+  min-height: 894px;
+}
+#writing {
+  grid-area: writing;
+  min-height: 650px;
+}
+#reading {
+  grid-area: reading;
+  min-height: 650px;
+}
+#speaking,
+#writing,
+#reading {
+  max-width: 452px;
+}
+#listening {
+  grid-area: listening;
+  max-width: 928px;
+  min-height: 400px;
+  display: flex;
+  gap: 9.9%;  /* 92px; */
+}
+
+#listening .skills__info {
+  max-width: 338px;  /* ограничение по ширине блока - чтобы картинка справа в полном размере */
+  margin-top: 42px;
+}
+
+.skills__pic__contain .skills__pic {
+  margin-top: 25%;  /* 100px; смещение картинки от верхнего края родителя */
+  }
+  
+.skills__pic {
+  max-height: 300px;
+}
+
+.skills__item {
+  background: var(--gray-10);
+  border-radius: 10px;
+  padding: 0 48px 48px 48px;
+}
+
+.skills__info {
+  padding-bottom: 20px;  /* отступ до кнопки Learn More */
+}
+
+.skills__head {
+  max-height: 80px;
+  margin-bottom: 5px;
+}
+
+.skills__text {
+  margin-bottom: 20px;  /* отступ между абзацами (Speaking) = размеру шрифта */
+}
+
+.skills__button {
+  width: 230px;
+  height: 60px;
+  font-size: 18px;
+  line-height: 27px;
+}
+
+   /* About Us */
+  .about__content {
+    display: grid;
+    grid-template-areas:
+    "title right"
+    "text right"
+    "statistic right";
+    grid-template-columns: 50% 35.7%; /* 700px 500px; */
+    column-gap: 14.3%;
+  }
+
+  .about__right {
+    grid-area: right;
+  }
+
+  .about__title {
+    grid-area: title;
+    padding-top: 60px;
+    margin-bottom: 30px;
+  }
+
+  .about__text {
+    grid-area: text;
+    margin-bottom: 24px; /* даже макетных 10px визуально кажется мало! */
+  }
+
+  .about__statistic {
+    grid-area: statistic;
+    width: 100%;
+    display: flex;
+    gap: 20.5%;    /* 144px */
+  }
+
+  .about__statistic-item {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .about__statistic-numbers,
+  .about__statistic-words {
+    text-align: center; 
+  }
+
+  .about__statistic-numbers {
+    color: var(--black-10);
+  }
+
+  .about__statistic-words {
+    line-height: 30px;
+  }
+
+  /* Pricing */
+  .pricing__content {
+    display: flex;
+    gap: 2.86%;   /* 40px; */
+  }
+
+  .pricing__item {
+    max-width: 31.4%;    /* 440px; */
+    padding: 0 0 24px 24px;
+  }
+
+  .pricing__pic__contain {
+    max-width: 340px;
+    height: 340px;
+  }
+
+  .pricing__item__text {
+    min-height: 190px;
+    margin-bottom: 40px;
+  }
+
+  .pricing__item__head {
+    line-height: 48px;
+    margin-bottom: 20px;
+  }
+
+  .pricing__item__paragraph {
+    max-width: 93%;  /* 410px; */
+  }
+
+  .pricing__button {
+    width: 240px;
+    height: 46px;
+    border: none;
+    background: var(--gray-20);
+    font-size: 30px;
+    transition: background-color 1s;
+  }
+
+  .pricing__button a {
+    color: var(--black-20);
+    align-items: center;
+    gap: 8px;
+  }
+
+  .pricing__button span {
+    color: #546269;
+    font-size: 18px;
+    text-align: left;
+  }
+  
+  /* Contact Us */
+  .contacts__content {
+    display: grid;
+    grid-template-areas: 
+    "left title"
+    "left text"
+    "left form";
+    gap: 4%;    /* 56px; */
+  }
+
+  .contacts__left {
+    grid-area: left;
+  }
+  
+  .contacts__title {
+    grid-area: title;
+    padding: 30px 0;
+  }
+
+  .contacts__text {
+    grid-area: text;
+    max-width: 776px;
+    margin-bottom: 50px;
+  }
+
+  .contacts__form {
+    grid-area: form;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .contacts__input,
+  .contacts__button {
+    height: 80px;
+    border: 1px solid var(--gray-30);
+    border-radius: 10px;
+    font-size: 20px;  
+  }
+
+  .contacts__input {
+    width: 450px;
+    color: var(--gray-30);
+    padding: 28px 0 28px 34px;
+  }
+
+  .contacts__button {
+    width: 264px;
+    transition: background-color 1s;
+  }
+  
+   /* Footer */
+  .footer__line {
+    max-width: 1400px;
+    height: 1px;
+    background: #C4C4C4;
+  }
+
+  .footer__content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 48px;
+  }
+
+  .footer__menu {
+    display: flex;
+    gap: 20px;
+    font-size: 24px;
+    line-height: 36px;
+  }
+
+  .footer__menu li {
+    list-style: none;
+  }
+
+  .footer__menu a {
+    color: var(--gray-30);
+  }
+
+/* 100% Width of Pictures */
+.screen__pic,
+.skills__pic,
+.about__pic,
+.pricing__pic {
+  width: 100%;    /* выравниваем картинку по центру родителя и тем самым по центру своего блока */
+}
+
+/* Buttons & Input Common States */
+button {
+  cursor: pointer;
+}
+
+.header__button,
+.skills__button,
+.pricing__button {
+  border-radius: 5px;
+}
+
+.screen__button,
+.skills__button,
+.contacts__button {
+  background: var(--black-20);
+  color: #fff;
+}
+
+.skills__button,
+.contacts__button {
+  text-align: center;
+  font-weight: 500;
+}
+
+.pricing__button,
+.contacts__input {
+  text-align: left;
+}
+
+.pricing__button,
+.pricing__button a {
+  display: flex;
+  justify-content: center;
+}
+
+/* BUTTONS & LINKS INTERACTIVE STATES */
+.header__button:hover {
+  background: #000;
+}
+
+.header__button a:hover {
+  color: #fff;
+  font-weight: 500;
+}
+
+.header__menu li:hover {
+  outline: 1px solid #000;
+}
+
+.screen__button:hover, 
+.skills__button:hover {
+  background: #fff;
+}
+
+.screen__button a:hover, 
+.skills__button a:hover {
+  background: #fff;
+  color: #000;
+}
+
+.contacts__button:hover {
+  background: #fff;
+  color: #000;
+}
+
+.pricing__button:hover,
+.contacts__input:hover,
+.contacts__input:focus {
+  border: 2px solid var(--gray-30);
+}
+
+.footer__menu a:hover {
+  color: #000;
+  font-weight: 500;
+}
+
+/* MEDIA */
+  
+  /* 992 max */
+  @media (max-width: 992px) {
+.screen__title {
+  font-size: 48px;
+  line-height: 64px;
+}
+.screen__text {
+  font-size: 22px;
+}
+.screen__button {
+  width: 292px;
+  height: 80px;
+  font-size: 24px;
+}
+/* Skills */
+.skills__content {
+  display: grid;
+  grid-template-areas: 
+  "speaking writing"
+  "reading listening";
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2%;  /* 20px; */
+  justify-items: center;
+}
+#listening {
+  display: flex;
+  flex-direction: column-reverse;  /* чтобы картинка была вверху, как в других подсекциях */
+  justify-content: flex-end;
+  gap: 0px;  
+}
+#listening .skills__head {
+  margin-bottom: 5px;
+}
+#listening .skills__info {
+  margin-top: 0;
+  max-width: 356px; /* меняем десктопную макс-ширину блока, чтобы ширина Listening была = ширине других блоков */
+}
+.skills__pic__contain .skills__pic {
+  margin-top: 0;  
+}
+#speaking,
+#writing,
+#reading,
+#listening {
+  max-width: 45.6vw; /* 452px; от 992px  */
+}
+/* Pricing */
+.pricing__item {
+  max-width: 300px;
+  padding: 0 0 10px 10px;
+}
+.pricing__pic__contain {
+  max-width: 300px;
+  height: 300px;
+}
+.pricing__button {
+  width: 204px;
+  font-size: 24px;
+}
+.pricing__button span {
+    font-size: 16px;
+}
+  /* Contacts */
+.contacts__form {
+  display: flex;
+  gap: 12px;
+}
+.contacts__input {
+  width: 264px;  /* ширина = ширине кнопки, т.к. уже на 912px инпут над кнопкой */
+}
+  /* Footer */
+.footer .logo {
+  font-size: 30px;
+}
+}
+
+  /* 768px max */
+@media (max-width: 768px) {
+  /* Text */
+  .skills__text,
+  .about__text,
+  .about__statistic-words,
+  .pricing__item__paragraph,
+  .contacts__text {
+    font-size: 18px;
+  }
+  /* Header */
+  .logo {
+    font-size: 30px;
+  }
+  .header__button,
+  .header__menu,
+  .screen__lamp {
+    display: none;
+  }
+  .header__content {
+    justify-content: space-between;
+    gap: 0;
+  }
+  .header__burger {
+    width: 44px;
+    height: 24px;
+    padding: 0;
+    background: #fff;
+    border: none;
+    margin: 10px 0;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.burger__line {
+    display: block;
+    width: 44px;
+    height: 4px;
+    background: var(--gray-main);
+    margin-bottom: 6px;
+}
+.burger__line:last-child {
+    margin-bottom: 0;
+    width: 30px;
+    align-self: start;
+}
+/* Screen */
+.screen__content {
+    display: grid;
+    grid-template-areas: 
+    "right"
+    "left";
+    grid-template-columns: repeat(1, 1fr);
+    gap: 0;
+    place-items: center; /* выравнивает все дочерние по центру родителя */
+  }
+.screen__right {
+  grid-area: right;
+}
+.screen__left {
+  grid-area: left;
+  padding-left: 0; /* обнуляем левый padding установленный ранее для десктопа */
+}
+.screen__group {
+  display: block;
+}
+  .break__text {
+  display: inline; /* превращаем десктопный блочный span обратно в строчный */
+}
+.screen__title {
+  white-space: nowrap; /* теперь, после шага выше, выводим весь текст одной строкой */
+  font-size: 36px; /* уменьшаем десктоп-значение 64px на 28 единиц, чтобы текст уместился по горизонтали. */
+  max-width: 632px; /* выравниваем заголовок по центру родителя */
+}
+.screen__title,
+.screen__text {
+  text-align: center;
+}
+.screen__button {
+  display: block;
+  margin-inline: auto;
+}
+/* Skills */
+.skills__title,
+.about__title,
+.pricing__title,
+.contacts__title {
+  font-size: 30px;
+}
+.skills__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px 0;  
+}
+#speaking,
+#writing,
+#reading,
+#listening {
+  max-width: 59vw; /* 452px; от 768px  */
+  min-height: 700px;
+}
+.skills__head {
+  font-size: 22px;
+}
+.skills__text {
+  margin-bottom: 18px;  /* отступ между абзацами (Speaking) = размеру шрифта */
+}
+.skills__button {
+  width: 178px;
+  height: 50px;
+  font-size: 16px;
+  line-height: normal;
+}
+/* About */
+.about__content {
+  display: grid;
+  grid-template-areas: 
+  "title"
+  "right"
+  "text"
+  "statistic";
+  grid-template-columns: repeat(1, 1fr);
+  justify-items: center;
+}
+.about__title {
+  text-align: center;
+}
+.about__text {
+  text-align: center;
+  margin-bottom: 12px;
+}
+.about__statistic {
+  justify-content: center;
+}
+.about__statistic-numbers {
+  font-size: 22px;
+}
+/* Pricing */
+.pricing__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 80px;    
+}
+.pricing__item {
+  max-width: 440px; /* возврат десктоп-величины, чтобы контент был шире */
+}
+.pricing__pic__contain {
+  margin-inline: auto; /* выравнивание картинки по центру род-контейнера */
+}
+.pricing__item__text {
+  min-height: 100px; /* меньше предыдущего почти в 2 раза; сократил расстояние между текстом и кнопкой */
+  margin-bottom: 20px;
+}
+.pricing__item__head,
+.pricing__item__paragraph {
+  text-align: center;
+}
+.pricing__item__head {
+  font-size: 22px;
+  margin-bottom: 14px;
+}
+.pricing__button {
+  margin-inline: auto;
+  width: 204px;
+  font-size: 22px;
+}
+.pricing__button span {
+font-size: 16px;
+}
+/* Contacts */
+.contacts__content {
+  display: grid;
+  grid-template-areas: 
+  "title"
+  "left"
+  "text"
+  "form";
+  grid-template-columns: repeat(1, 1fr);
+  gap: 0;   
+  justify-items: center;
+  padding: 36px;
+}
+.contacts__title {
+  grid-area: title;
+  text-align: center;
+}
+.contacts__text .break__text {
+  display: block;
+}
+.contacts__text {
+  grid-area: text;
+  text-align: center;
+  white-space: nowrap;
+}
+.contacts__form {
+  grid-area: form;
+  justify-content: center;
+}
+.contacts__input,
+.contacts__button {
+  height: 50px;
+  font-size: 18px;  
+}
+.contacts__input {
+  width: 282px;
+  padding: 16px 0 16px 24px;
+}
+.contacts__button {
+  width: 144px;
+}
+/* Footer */
+.footer__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.footer__menu {
+  font-size: 16px;
+}
+/* Margin bottoms for 768px */
+.header,
+.contacts {
+    margin-bottom: 50px;
+  }
+.screen,
+.skills,
+.pricing,
+.about {
+  margin-bottom: 125px;
+}
+}
+   
+   
+    /* 575px max */
+  @media (max-width: 575px) {
+  .screen__title {
+    font-size: 5.9vw; /* = 34px по макету*/
+   }
+   .screen__text .break__text {
+    display: inline;
+   }
+  .screen__text {
+    font-size: 20px;
+    text-align: center;
+   }
+   .screen__button {
+    width: 304px;
+    height: 74px;
+    font-size: 18px;
+  }
+  /* Skills */
+    #speaking,
+    #writing,
+    #reading,
+    #listening {
+      max-width: 78vw; /* 452px; от 575px  */
+  }
+    /* Contacts */
+  .contacts__content {
+    padding: 24px; 
+  }
+  .contacts__text .break__text {
+    display: inline;
+  }
+  .contacts__text {
+    max-width: 575px;
+    white-space: normal;
+  }
+  .contacts__form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+  }
+  .contacts__input,
+  .contacts__button {
+    text-align: center;
+    padding: 0;
+  }
+  .contacts__button {
+    width: 282px;  /* ширина кнопки теперь = ширине инпута */
+  }    
+
+  /* Margin bottoms for 575px */
+  /* в 2 раза меньше, чем на 768px */
+  .header,
+  .contacts {
+      margin-bottom: 25px;
+    }
+  .screen,
+  .skills,
+  .pricing,
+  .about {
+    margin-bottom: 62px;
+  }
+  }
+
+    /* 380px max */
+  @media (max-width: 380px) {
+    /* Text */
+    .skills__title,
+    .about__title,
+    .pricing__title,
+    .contacts__title {
+      font-size: 22px;
+    }
+    .skills__title,
+    .pricing__title {
+      padding-top: 30px;
+      margin-bottom: 30px;
+    }
+    .about__title {
+      padding-top: 30px;
+    }
+    .skills__head,
+    .pricing__item__head {
+      font-size: 20px;
+    }
+    .skills__text,
+    .about__text,
+    .pricing__item__paragraph,
+    .contacts__text {
+      font-size: 16px;
+    }
+    .screen__text,
+    .about__text,
+    .contacts__text,
+    .pricing__item__paragraph {
+      max-width: 320px;
+    }
+    /* Header */
+    .header__burger {
+      margin-left: 0;
+    }
+    .logo {
+      font-size: 24px;
+    }
+    /* Screen */
+    .screen__content {
+      padding: 10px; 
+    }
+    .screen__title .break__text {
+      display: inline;
+    }
+    .screen__title {
+      font-size: 24px;
+      white-space: wrap;
+    }
+    .screen__text {
+      font-size: 16px;    
+    }
+    .screen__text .break__text {
+      display: block;
+    }
+    .screen__button {
+      width: 288px;
+      height: 60px;
+      font-size: 16px;
+    }
+    .screen__right {
+      max-width: 380px;
+    }
+    /* Skills */
+    .skills__item {
+      padding: 0 12px 12px 12px;  /* левый в 4 раза меньше десктопного + добавляем правый и нижний */
+    }
+    .skills__button {
+      width: 178px;
+      height: 50px;
+      font-size: 14px;
+    }
+    /* About */
+    .about__statistic {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    /* Pricing */
+    .pricing__content {
+      gap: 40px;    
+    }
+    .pricing__pic__contain {
+      max-width: 260px;
+      height: 260px;
+    }
+    .pricing__item__text {
+      margin-bottom: 10px;
+    }
+    .pricing__button {
+      width: 170px;
+      height: 38px;
+      font-size: 18px;
+    }
+    .pricing__button span {
+      font-size: 14px;
+    }
+      /* Contacts */
+    .contacts__content {
+      padding: 0; /* выравнивает всё по центру */
+      padding-bottom: 10px;
+    }
+    .contacts__text {
+      margin-bottom: 20px;
+    }
+    .contacts__input,
+    .contacts__button {
+      width: 290px;
+      height: 60px;
+      font-size: 14px;
+    }
+    /* Footer */
+    .footer__menu {
+      font-size: 14px;
+      flex-direction: column;
+      gap: 10px;
+      text-align: left;
+    }
+     /* Margin bottoms for 380px */
+    .header,
+    .contacts {
+      margin-bottom: 25px;
+      }
+    .screen,
+    .skills,
+    .pricing,
+    .about {
+      margin-bottom: 62px;
+    }
+  }
+
+/* MENU MATERIALIZE */
+ul#slide-out:not(.browser-default) {
+  padding-left: 0;
+  list-style-type: none;
+}
+
+ul#slide-out:not(.browser-default) > li {
+  list-style-type: none;
+}
+
+#slide-out a {
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.sidenav {
+  -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+}
+
+.sidenav.fixed .collapsible {
+  border: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.sidenav .collapsible li,
+.sidenav.fixed .collapsible li {
+  padding: 0;
+}
+
+.sidenav .collapsible-header,
+.sidenav.fixed .collapsible-header {
+  background-color: transparent;
+  border: none;
+  line-height: inherit;
+  height: inherit;
+  padding: 0 16px;
+}
+
+.sidenav .collapsible-header:hover,
+.sidenav.fixed .collapsible-header:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.sidenav .collapsible-header i,
+.sidenav.fixed .collapsible-header i {
+  line-height: inherit;
+}
+
+.sidenav .collapsible-body,
+.sidenav.fixed .collapsible-body {
+  border: 0;
+  background-color: #fff;
+}
+
+.sidenav .collapsible-body li a,
+.sidenav.fixed .collapsible-body li a {
+  padding: 0 23.5px 0 31px;
+}
+
+.sidenav {
+  position: fixed;
+  width: 300px;
+  left: 0;
+  top: 0;
+  margin: 0;
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+  height: 100%;
+  height: calc(100% + 60px);
+  height: -moz-calc(100%);
+  padding-bottom: 60px;
+  background-color: #fff;
+  z-index: 999;
+  overflow-y: auto;
+  will-change: transform;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  -webkit-transform: translateX(-105%);
+          transform: translateX(-105%);
+}
+
+.sidenav.right-aligned {
+  right: 0;
+  -webkit-transform: translateX(105%);
+          transform: translateX(105%);
+  left: auto;
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+}
+
+.sidenav .collapsible {
+  margin: 0;
+}
+
+.sidenav li {
+  float: none;
+  line-height: 48px;
+}
+
+.sidenav li.active {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.sidenav li > a {
+  color: rgba(0, 0, 0, 0.87);
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  height: 48px;
+  line-height: 48px;
+  padding: 0 32px;
+}
+
+.sidenav li > a:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.sidenav li > a.btn, .sidenav li > a.btn-large, .sidenav li > a.btn-small, .sidenav li > a.btn-large, .sidenav li > a.btn-flat, .sidenav li > a.btn-floating {
+  margin: 10px 15px;
+}
+
+.sidenav li > a.btn, .sidenav li > a.btn-large, .sidenav li > a.btn-small, .sidenav li > a.btn-large, .sidenav li > a.btn-floating {
+  color: #fff;
+}
+
+.sidenav li > a.btn-flat {
+  color: #343434;
+}
+
+.sidenav li > a.btn:hover, .sidenav li > a.btn-large:hover, .sidenav li > a.btn-small:hover, .sidenav li > a.btn-large:hover {
+  background-color: #2bbbad;
+}
+
+.sidenav li > a.btn-floating:hover {
+  background-color: #26a69a;
+}
+
+.sidenav li > a > i,
+.sidenav li > a > [class^="mdi-"], .sidenav li > a li > a > [class*="mdi-"],
+.sidenav li > a > i.material-icons {
+  float: left;
+  height: 48px;
+  line-height: 48px;
+  margin: 0 32px 0 0;
+  width: 24px;
+  color: rgba(0, 0, 0, 0.54);
+}
+
+.sidenav .divider {
+  margin: 8px 0 0 0;
+}
+
+.sidenav .subheader {
+  cursor: initial;
+  pointer-events: none;
+  color: rgba(0, 0, 0, 0.54);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 48px;
+}
+
+.sidenav .subheader:hover {
+  background-color: transparent;
+}
+
+.sidenav .user-view {
+  position: relative;
+  padding: 32px 32px 0;
+  margin-bottom: 8px;
+}
+
+.sidenav .user-view > a {
+  height: auto;
+  padding: 0;
+}
+
+.sidenav .user-view > a:hover {
+  background-color: transparent;
+}
+
+.sidenav .user-view .background {
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.sidenav .user-view .circle, .sidenav .user-view .name, .sidenav .user-view .email {
+  display: block;
+}
+
+.sidenav .user-view .circle {
+  height: 64px;
+  width: 64px;
+}
+
+.sidenav .user-view .name,
+.sidenav .user-view .email {
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.sidenav .user-view .name {
+  margin-top: 16px;
+  font-weight: 500;
+}
+
+.sidenav .user-view .email {
+  padding-bottom: 16px;
+  font-weight: 400;
+}
+
+.sidenav.sidenav-fixed {
+  left: 0;
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+  position: fixed;
+}
+
+.sidenav.sidenav-fixed.right-aligned {
+  right: 0;
+  left: auto;
+}
+
+  .sidenav .collapsible-body > ul:not(.collapsible) > li.active,
+.sidenav.sidenav-fixed .collapsible-body > ul:not(.collapsible) > li.active {
+  background-color: #ee6e73;
+}
+
+.sidenav .collapsible-body > ul:not(.collapsible) > li.active a,
+.sidenav.sidenav-fixed .collapsible-body > ul:not(.collapsible) > li.active a {
+  color: #fff;
+}
+
+.sidenav .collapsible-body {
+  padding: 0;
+}
+
+.sidenav-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  height: 120vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 997;
+  display: none;
+}
+
+.material-icons {
+  text-rendering: optimizeLegibility;
+  -webkit-font-feature-settings: 'liga';
+     -moz-font-feature-settings: 'liga';
+          font-feature-settings: 'liga';
+}
+
+.divider {
+  height: 1px;
+  overflow: hidden;
+  background-color: #e0e0e0;
+}
